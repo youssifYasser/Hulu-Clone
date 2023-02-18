@@ -1,18 +1,17 @@
 import Image from 'next/image'
 import { HandThumbUpIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react'
-import { useRouter } from 'next/router'
+import { forwardRef, useState } from 'react'
 
-const Thumbnail = ({ result }) => {
+// eslint-disable-next-line react/display-name
+const Thumbnail = forwardRef(({ result }, ref) => {
   const [showOverview, setShowOverview] = useState(false)
-  const router = useRouter()
-
-  if (router.query.genre === 'RomanceMovies') {
-    console.log(`${result.title || result.original_name} ==> `, result)
-  }
   const base_url = 'https://image.tmdb.org/t/p/original'
+
   return (
-    <div className='3xl:max-w-lg group p-2 cursor-pointer sm:transition-transform sm:duration-200 sm:ease-in sm:hover:scale-105 hover:z-50 '>
+    <div
+      ref={ref}
+      className='3xl:max-w-lg group p-2 cursor-pointer sm:transition-transform sm:duration-200 sm:ease-in sm:hover:scale-105 hover:z-50 '
+    >
       <Image
         src={
           `${base_url}${result.backdrop_path || result.poster_path}` ||
@@ -51,6 +50,6 @@ const Thumbnail = ({ result }) => {
       </div>
     </div>
   )
-}
+})
 
 export default Thumbnail
