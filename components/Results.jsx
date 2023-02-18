@@ -1,5 +1,5 @@
 import Thumbnail from './Thumbnail'
-import FlipMove from 'react-flip-move'
+// import FlipMove from 'react-flip-move'
 
 const Results = ({ results }) => {
   return (
