@@ -24,7 +24,7 @@ const Thumbnail = forwardRef(({ result }, ref) => {
       />
 
       <div className='p-2'>
-        <p className='whitespace-nowrap'>
+        <p className={!showOverview && 'whitespace-nowrap'}>
           {showOverview ? result.overview : result.overview.slice(0, 35)}
           {showOverview || (result.overview.slice(35).length > 0 && '...')}
           {result.overview.slice(35).length > 0 && (
