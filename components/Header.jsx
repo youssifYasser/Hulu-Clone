@@ -8,6 +8,7 @@ import {
   MagnifyingGlassIcon,
   RectangleStackIcon,
 } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 const Header = () => {
   return (
@@ -20,12 +21,14 @@ const Header = () => {
         <HeaderItem title='search' Icon={MagnifyingGlassIcon} />
         <HeaderItem title='account' Icon={UserIcon} />
       </div>
-      <Image
-        src='https://links.papareact.com/ua6'
-        alt='hulu logo'
-        width={200}
-        height={100}
-      />
+      <Link href='/'>
+        <Image
+          src='https://links.papareact.com/ua6'
+          alt='hulu logo'
+          width={200}
+          height={100}
+        />
+      </Link>
     </header>
   )
 }
