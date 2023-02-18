@@ -6,6 +6,9 @@
   body {
     @apply bg-[#06202A] text-gray-300;
   }
+  p {
+    @apply active:pointer-events-none sm:active:pointer-events-auto;
+  }
 }
 
 @layer utilities {

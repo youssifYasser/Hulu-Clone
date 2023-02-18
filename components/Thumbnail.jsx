@@ -10,7 +10,7 @@ const Thumbnail = forwardRef(({ result }, ref) => {
   return (
     <div
       ref={ref}
-      className='3xl:max-w-lg group p-2 cursor-pointer sm:transition-transform sm:duration-200 sm:ease-out sm:hover:scale-105 hover:z-50 '
+      className='3xl:max-w-lg group p-2 cursor-pointer sm:transition-transform sm:duration-200 sm:ease-out sm:hover:scale-105 hover:z-50 active:pointer-events-none sm:active:pointer-events-auto'
     >
       <Image
         src={
