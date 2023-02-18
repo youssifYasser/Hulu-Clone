@@ -15,13 +15,15 @@ const Nav = () => {
             className={`${
               router.query.genre
                 ? router.query.genre === key
-                  ? 'text-red-500 '
+                  ? 'text-red-500 scale-110'
                   : 'hover:text-white'
-                : key === 'Trending' && 'text-red-500'
+                : key === 'Trending' && 'text-red-500 scale-110'
             } last:pr-10 first:pl-10 cursor-pointer transition-transform duration-100 hover:scale-110 active:text-red-500`}
             key={key}
           >
-            <h2 className='active:pointer-events-none'>{title}</h2>
+            <h2 className='active:pointer-events-none sm:active:pointer-events-auto'>
+              {title}
+            </h2>
           </div>
         ))}
       </div>
