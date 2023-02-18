@@ -25,18 +25,21 @@ const Thumbnail = ({ result }) => {
       />
 
       <div className='p-2'>
-        {showOverview ? result.overview : result.overview.slice(0, 35)}
-        {showOverview || (result.overview.slice(35).length > 0 && '...')}
-        {result.overview.slice(35).length > 0 && (
-          <span
-            className={`${
-              showOverview && 'hidden'
-            } underline cursor-pointer text-gray-600 ml-1`}
-            onClick={() => setShowOverview(true)}
-          >
-            more
-          </span>
-        )}
+        <p className='whitespace-nowrap'>
+          {showOverview ? result.overview : result.overview.slice(0, 35)}
+          {showOverview || (result.overview.slice(35).length > 0 && '...')}
+          {result.overview.slice(35).length > 0 && (
+            <span
+              className={`${
+                showOverview && 'hidden'
+              } underline cursor-pointer text-gray-600 ml-1`}
+              onClick={() => setShowOverview(true)}
+            >
+              more
+            </span>
+          )}
+        </p>
+
         <h2 className='mt-1 text-white  text-2xl font-medium sm:font-normal sm:group-hover:font-bold sm:transition-all sm:duration-100 sm:ease-in-out'>
           {result.title || result.original_name}
         </h2>
