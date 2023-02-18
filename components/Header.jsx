@@ -24,6 +24,7 @@ const Header = () => {
       <Link href='/'>
         <Image
           src='https://links.papareact.com/ua6'
+          className='object-contain'
           alt='hulu logo'
           width={200}
           height={100}
