@@ -10,8 +10,7 @@ const Nav = () => {
 
       <div className='flex px-10 sm:px-20 space-x-10 sm:space-x-20 whitespace-nowrap overflow-x-scroll text-lg sm:text-xl  md:text-2xl overflow-y-hidden scrollbar-thin scrollbar-thumb-[#085675] pb-5'>
         {Object.entries(requests).map(([key, { title, url }]) => (
-          <h2
-            key={key}
+          <div
             onClick={() => router.push(`/?genre=${key}`)}
             className={`${
               router.query.genre
@@ -20,9 +19,10 @@ const Nav = () => {
                   : 'hover:text-white'
                 : key === 'Trending' && 'text-red-500'
             } last:pr-10 first:pl-10 cursor-pointer transition-transform duration-100 hover:scale-110 active:text-red-500`}
+            key={key}
           >
-            {title}
-          </h2>
+            <h2 className='active:pointer-events-none'>{title}</h2>
+          </div>
         ))}
       </div>
       <div className='absolute top-0 right-0 w-1/12 h-10 bg-gradient-to-l from-[#06202A]' />
